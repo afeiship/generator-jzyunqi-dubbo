@@ -30,40 +30,13 @@
   "dependencies": {
     "chalk": "^2.1.0",
     "gulp-rename": "^1.2.3",
+    "mkdirp": "^0.5.1",
     "next-camelize": "github:afeiship/next-camelize",
     "yeoman-generator": "^2.0.1",
     "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper",
     "yosay": "^2.0.1"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
   "scripts": {
-    "prepublishOnly": "nsp check",
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
-    "test": "jest"
-  },
-  "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
-  },
-  "eslintConfig": {
-    "extends": ["xo", "prettier"],
-    "env": {
-      "jest": true,
-      "node": true
-    },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
-    },
-    "plugins": ["prettier"]
   },
   "repository": "git@github.com:afeiship/generator-jzyunqi-dubbo.git",
   "license": "MIT"
