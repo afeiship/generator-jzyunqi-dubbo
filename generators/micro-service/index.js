@@ -3,6 +3,7 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const yoHelper = require('yeoman-generator-helper');
+const rename = require('gulp-rename');
 
 module.exports = class extends Generator {
   prompting() {
@@ -28,21 +29,26 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    // This.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // );
+    this._writingServiceTemplate();
   }
 
   _writingServiceTemplate() {
+    this.registerTransformStream(
+      rename(path => {
+        path.dirname = path.dirname.replace(/template/g, this.props.module_name);
+        path.basename = path.basename.replace(/template/g, this.props.module_name);
+        return path;
+      })
+    );
+
     this.fs.copyTpl(
-      this.templatePath('service-template'),
+      this.templatePath(),
       this.destinationPath('jzyunqi-microservices'),
       this.props
     );
   }
 
   install() {
-    this.installDependencies();
+    console.log('use `npm install --registry=https://registry.npm.taobao.org`');
   }
 };

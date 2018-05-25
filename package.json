@@ -28,11 +28,12 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
-    "yosay": "^2.0.1",
+    "gulp-rename": "^1.2.3",
     "next-camelize": "github:afeiship/next-camelize",
-    "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper"
+    "yeoman-generator": "^2.0.1",
+    "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper",
+    "yosay": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node"

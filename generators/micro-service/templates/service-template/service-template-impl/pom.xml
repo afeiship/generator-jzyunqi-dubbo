@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>service-uaa</artifactId>
+        <artifactId>service-<%= module_name %></artifactId>
         <groupId>cn.jzyunqi</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-uaa-impl</artifactId>
+    <artifactId>service-<%= module_name %>-impl</artifactId>
 
     <dependencies>
         <!-- querydsl-apt为辅助类的自动生成，必须导入querydsl-jpa，querydsl-apt才有效 -->
@@ -25,7 +25,7 @@
         <!-- 业务接口依赖 -->
         <dependency>
             <groupId>cn.jzyunqi</groupId>
-            <artifactId>service-uaa-api</artifactId>
+            <artifactId>service-<%= module_name %>-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
