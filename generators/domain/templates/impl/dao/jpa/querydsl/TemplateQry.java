@@ -4,7 +4,7 @@ import cn.jzyunqi.ms.<%= module_name %>.domain.Q<%= DomainName %>;
 
 /**
  * @author wiiyaya
- * @date 2018/5/24.
+ * @date <%= currentDate %>
  */
 public class <%= DomainName %>Qry {
 

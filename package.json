@@ -30,6 +30,7 @@
     "gulp-rename": "^1.2.3",
     "mkdirp": "^0.5.1",
     "next-camelize": "github:afeiship/next-camelize",
+    "next-date": "github:afeiship/next-date",
     "randomstring": "^1.1.5",
     "yeoman-generator": "^2.0.1",
     "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper",

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 /**
  * @author wiiyaya
- * @date 2018/5/3
+ * @date <%= currentDate %>
  */
 @Entity
 @Table(name = "<%= table_name %>")

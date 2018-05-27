@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author wiiyaya
- * @date 2018/5/3
+ * @date <%= currentDate %>
  */
 @Configuration
 @ImportResource({"classpath:/service-<%= module_name %>-dubbo.xml"})

@@ -5,6 +5,7 @@ const yosay = require('yosay');
 const yoHelper = require('yeoman-generator-helper');
 const rename = require('gulp-rename');
 const path = require('path');
+const NxDate = require('next-date');
 
 module.exports = class extends Generator {
   prompting() {
@@ -25,6 +26,7 @@ module.exports = class extends Generator {
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
       this.props = props;
+      this.props.currentDate = NxDate.format(new Date()).format('yyyy-mm-dd');
       yoHelper.rewriteProps(this.props);
     });
   }

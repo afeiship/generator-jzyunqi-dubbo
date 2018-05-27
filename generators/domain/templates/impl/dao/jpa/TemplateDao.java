@@ -5,7 +5,7 @@ import cn.jzyunqi.ms.<%= module_name %>.domain.<%= DomainName %>;
 
 /**
  * @author wiiyaya
- * @date 2018/5/3
+ * @date <%= currentDate %>
  */
 public interface <%= DomainName %>Dao extends BaseDao<<%= DomainName %>, Long> {
 }

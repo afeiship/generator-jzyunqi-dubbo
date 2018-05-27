@@ -2,7 +2,7 @@ package cn.jzyunqi.ms.<%= module_name %>.service;
 
 /**
  * @author wiiyaya
- * @date 2018/5/3
+ * @date <%= currentDate %>
  */
 public interface App<%= DomainName %>Service {
 
