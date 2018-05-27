@@ -14,6 +14,6 @@ import javax.persistence.Table;
 @Table(name = "<%= table_name %>")
 public class <%= DomainName %> extends BaseDomain<Long, Long> {
 
-    private static final long serialVersionUID = -4645185490583604352L;
+    private static final long serialVersionUID = <%= serialVersionUID() %>;
 
 }

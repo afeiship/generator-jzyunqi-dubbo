@@ -11,6 +11,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class App<%= DomainName %>Dto extends <%= DomainName %>Dto {
-    // 生成18 位随机 + L
-    private static final long serialVersionUID = 625800346486054708L;
+    private static final long serialVersionUID = <%= serialVersionUID() %>;
 }

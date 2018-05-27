@@ -11,5 +11,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Bk<%= DomainName %>Dto extends <%= DomainName %>Dto {
-    private static final long serialVersionUID = -258177631787491466L;
+    private static final long serialVersionUID = <%= serialVersionUID() %>;
 }

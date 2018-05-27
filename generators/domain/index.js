@@ -18,8 +18,8 @@ module.exports = class extends Generator {
     const prompts = [
       {
         type: 'input',
-        name: 'micro_name',
-        message: 'Your micro service name?(eg: `mcenter`)'
+        name: 'module_name',
+        message: 'Your module name?(eg: `mcenter`)'
       },
       {
         type: 'input',
@@ -35,11 +35,9 @@ module.exports = class extends Generator {
 
     this.ROOT_PATH = process.cwd();
     return this.prompt(prompts).then(props => {
-      const list = props.full_name.split(' ');
-      // To access props later use this.props.someAnswer;
       this.props = props;
-      this.props.serialVersionUID = this.serialVersionUID;
       yoHelper.rewriteProps(this.props);
+      this.props.serialVersionUID = this.serialVersionUID;
     });
   }
 
@@ -50,7 +48,40 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this._apiConstant();
+    this._writingApi();
+    this._writingImpl();
+  }
+
+  _remame(){
+    this.registerTransformStream(
+      rename(path => {
+        path.dirname = path.dirname.replace(/Template/g, this.props.DomainName);
+        path.basename = path.basename.replace(/Template/g, this.props.DomainName);
+        return path;
+      })
+    );
+  }
+
+  _writingApi() {
+    const { module_name } = this.props;
+    const _path = 'jzyunqi-microservices/service-TMPL/service-TMPL-api/src/main/java/cn/jzyunqi/ms/TMPL'.replace(/TMPL/g, module_name);
+    this._remame();
+    this.fs.copyTpl(
+      this.templatePath('api'),
+      this.destinationPath(_path),
+      this.props
+    );
+  }
+
+  _writingImpl() {
+    const { module_name } = this.props;
+    const _path = 'jzyunqi-microservices/service-TMPL/service-TMPL-impl/src/main/java/cn/jzyunqi/ms/TMPL'.replace(/TMPL/g, module_name);
+    this._remame();
+    this.fs.copyTpl(
+      this.templatePath('impl'),
+      this.destinationPath(_path),
+      this.props
+    );
   }
 
   install() {
