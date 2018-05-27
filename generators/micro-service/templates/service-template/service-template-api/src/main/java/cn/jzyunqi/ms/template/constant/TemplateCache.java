@@ -10,7 +10,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class <%= class_name %>Cache implements Cache {
+public class <%= ModuleName %>Cache implements Cache {
 
     private CacheType type;
 

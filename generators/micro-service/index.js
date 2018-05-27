@@ -33,7 +33,9 @@ module.exports = class extends Generator {
     this.registerTransformStream(
       rename(path => {
         path.dirname = path.dirname.replace(/template/g, this.props.module_name);
+        path.dirname = path.dirname.replace(/Template/g, this.props.ModuleName);
         path.basename = path.basename.replace(/template/g, this.props.module_name);
+        path.basename = path.basename.replace(/Template/g, this.props.ModuleName);
         return path;
       })
     );
