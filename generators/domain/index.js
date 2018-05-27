@@ -6,6 +6,7 @@ const yoHelper = require('yeoman-generator-helper');
 const rename = require('gulp-rename');
 const mkdirp = require('mkdirp');
 const path = require('path');
+const randomstring = require("randomstring");
 
 module.exports = class extends Generator {
   prompting() {
@@ -37,19 +38,19 @@ module.exports = class extends Generator {
       const list = props.full_name.split(' ');
       // To access props later use this.props.someAnswer;
       this.props = props;
+      this.props.serialVersionUID = this.serialVersionUID;
       yoHelper.rewriteProps(this.props);
     });
   }
 
+  serialVersionUID(){
+    const symbol = ['', '-'].find((item) => { return Math.random() > 0.5 });
+    const str = String(+randomstring.generate({ length: 18, charset: 'numeric' }));
+    return `${symbol}${str}L`;
+  }
+
   writing() {
     this._apiConstant();
-  }
-
-  _apiConstant(){
-  }
-
-  _scaffoldFolders() {
-    mkdirp.sync(path.join(this.destinationPath(), 'app/test/by/fei'));
   }
 
   install() {

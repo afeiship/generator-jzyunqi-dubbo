@@ -8,9 +8,14 @@
     "email": "1290657123@qq.com",
     "url": "https://github.com/afeiship"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
-  "keywords": ["generator", "yeoman-generator"],
+  "keywords": [
+    "generator",
+    "yeoman-generator"
+  ],
   "devDependencies": {
     "nsp": "^2.8.0",
     "eslint": "^4.19.1",
@@ -25,12 +30,12 @@
     "gulp-rename": "^1.2.3",
     "mkdirp": "^0.5.1",
     "next-camelize": "github:afeiship/next-camelize",
+    "randomstring": "^1.1.5",
     "yeoman-generator": "^2.0.1",
     "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper",
     "yosay": "^2.0.1"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": "git@github.com:afeiship/generator-jzyunqi-dubbo.git",
   "license": "MIT"
 }
