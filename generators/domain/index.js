@@ -23,7 +23,7 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'domain_name',
-        message: 'Your module_name?(eg: `member`)'
+        message: 'Your domain_name?(eg: `member`)'
       },
       {
         type: 'input',
