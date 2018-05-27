@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 const mkdirp = require('mkdirp');
 const path = require('path');
 const randomstring = require("randomstring");
+const NxDate = require('next-date');
 
 module.exports = class extends Generator {
   prompting() {
@@ -38,6 +39,7 @@ module.exports = class extends Generator {
       this.props = props;
       yoHelper.rewriteProps(this.props);
       this.props.serialVersionUID = this.serialVersionUID;
+      this.props.currentDate = NxDate.format(new Date(),'yyyy-mm-dd');
     });
   }
 
