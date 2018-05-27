@@ -4,10 +4,8 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const yoHelper = require('yeoman-generator-helper');
 const rename = require('gulp-rename');
-const mkdirp = require('mkdirp');
-const path = require('path');
-const randomstring = require("randomstring");
 const NxDate = require('next-date');
+require('next-serial-version-uid');
 
 module.exports = class extends Generator {
   prompting() {
@@ -38,15 +36,9 @@ module.exports = class extends Generator {
     return this.prompt(prompts).then(props => {
       this.props = props;
       yoHelper.rewriteProps(this.props);
-      this.props.serialVersionUID = this.serialVersionUID;
+      this.props.serialVersionUID = `${nx.serialVersionUid()}L`;
       this.props.currentDate = NxDate.format(new Date(), 'yyyy-mm-dd');
     });
-  }
-
-  serialVersionUID() {
-    const symbol = ['', '-'][(Math.random() > 0.5) | 0];
-    const str = String(+randomstring.generate({ length: 18, charset: 'numeric' }));
-    return `${symbol}${str}L`;
   }
 
   writing() {
