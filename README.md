@@ -8,5 +8,5 @@
 yo jzyunqi-dubbo:micro-service
 
 ## create domain:
-
+yo jzyunqi-dubbo:domain
 ```
