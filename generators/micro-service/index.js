@@ -26,8 +26,8 @@ module.exports = class extends Generator {
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
       this.props = props;
-      this.props.currentDate = NxDate.format(new Date(), 'yyyy-mm-dd');
       yoHelper.rewriteProps(this.props);
+      this.props.currentDate = NxDate.format(new Date(), 'yyyy-mm-dd');
     });
   }
 

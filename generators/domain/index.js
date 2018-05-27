@@ -39,12 +39,12 @@ module.exports = class extends Generator {
       this.props = props;
       yoHelper.rewriteProps(this.props);
       this.props.serialVersionUID = this.serialVersionUID;
-      this.props.currentDate = NxDate.format(new Date(),'yyyy-mm-dd');
+      this.props.currentDate = NxDate.format(new Date(), 'yyyy-mm-dd');
     });
   }
 
-  serialVersionUID(){
-    const symbol = ['', '-'].find((item) => { return Math.random() > 0.5 });
+  serialVersionUID() {
+    const symbol = ['', '-'][(Math.random() > 0.5) | 0];
     const str = String(+randomstring.generate({ length: 18, charset: 'numeric' }));
     return `${symbol}${str}L`;
   }
@@ -54,7 +54,7 @@ module.exports = class extends Generator {
     this._writingImpl();
   }
 
-  _remame(){
+  _remame() {
     this.registerTransformStream(
       rename(path => {
         path.dirname = path.dirname.replace(/Template/g, this.props.DomainName);

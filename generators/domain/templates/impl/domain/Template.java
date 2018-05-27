@@ -13,7 +13,5 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "<%= table_name %>")
 public class <%= DomainName %> extends BaseDomain<Long, Long> {
-
     private static final long serialVersionUID = <%= serialVersionUID() %>;
-
 }

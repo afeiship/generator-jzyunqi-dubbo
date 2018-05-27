@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * @author wiiyaya
- * @date 2018/5/22.
+ * @date <%= currentDate %>
  */
 @Getter
 @Setter
