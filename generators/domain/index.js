@@ -22,8 +22,13 @@ module.exports = class extends Generator {
       },
       {
         type: 'input',
-        name: 'full_name',
-        message: 'Your module_name?(eg: `mcenter` | `uaa` | `oc-order`)'
+        name: 'domain_name',
+        message: 'Your module_name?(eg: `member`)'
+      },
+      {
+        type: 'input',
+        name: 'table_name',
+        message: 'Your table_name?(eg: `mc_member`)'
       }
     ];
 
@@ -33,9 +38,6 @@ module.exports = class extends Generator {
       // To access props later use this.props.someAnswer;
       this.props = props;
       yoHelper.rewriteProps(this.props);
-      this.props.module_name = list[0];
-      this.props.class_name = list[1];
-      this.props.table_name = list[2];
     });
   }
 
@@ -44,22 +46,6 @@ module.exports = class extends Generator {
   }
 
   _apiConstant(){
-    const { micro_name, module_name, class_name } = this.props;
-    const targetPath = 'jzyunqi-microservices/service-TMPL/service-TMPL-api/src/main/java/cn/jzyunqi/ms/TMPL/constant';
-    const _targetPath = targetPath.replace(/TMPL/g, micro_name);
-
-
-    this.fs.copyTpl(
-      this.templatePath('api/constant/TemplateCache.java'),
-      this.destinationPath(`${_targetPath}/${class_name}Cache.java`),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('api/constant/TemplateMessageConstant.java'),
-      this.destinationPath(`${_targetPath}/${class_name}MessageConstant.java`),
-      this.props
-    );
   }
 
   _scaffoldFolders() {
