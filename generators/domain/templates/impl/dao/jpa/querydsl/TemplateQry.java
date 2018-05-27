@@ -8,6 +8,6 @@ import cn.jzyunqi.ms.<%= module_name %>.domain.Q<%= DomainName %>;
  */
 public class <%= DomainName %>Qry {
 
-    private static final Q<%= DomainName %> MEMBER = Q<%= DomainName %>.member;
+    private static final Q<%= DomainName %> <%= DOMAIN_NAME %> = Q<%= DomainName %>.<%= domainName %>;
 
 }
