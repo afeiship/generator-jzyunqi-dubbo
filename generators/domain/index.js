@@ -36,7 +36,7 @@ module.exports = class extends Generator {
     return this.prompt(prompts).then(props => {
       this.props = props;
       yoHelper.rewriteProps(this.props);
-      this.props.serialVersionUID = `${nx.serialVersionUid()}L`;
+      this.props.serialVersionUID = this.serialVersionUid;
       this.props.currentDate = NxDate.format(new Date(), 'yyyy-mm-dd');
     });
   }
@@ -44,6 +44,10 @@ module.exports = class extends Generator {
   writing() {
     this._writingApi();
     this._writingImpl();
+  }
+
+  serialVersionUid(){
+    return `${nx.serialVersionUid()}L`;
   }
 
   _remame() {
