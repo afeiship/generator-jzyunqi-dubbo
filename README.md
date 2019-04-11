@@ -3,7 +3,7 @@
 
 ## install
 ```shell
-npm install -g afeiship/generator-jzyunqi-dubbo --registry=https://registry.npm.taobao.org
+git clone https://github.com/afeiship/generator-jzyunqi-dubbo.git
 cd generator-jzyunqi-dubbo
 npm install
 npm link
