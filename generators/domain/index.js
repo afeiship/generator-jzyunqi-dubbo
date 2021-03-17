@@ -2,10 +2,10 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const yoHelper = require('yeoman-generator-helper');
+const yoHelper = require('@jswork/yeoman-generator-helper');
 const rename = require('gulp-rename');
-const NxDate = require('next-date');
-require('next-serial-version-uid');
+const NxDate = require('@jswork/next-date');
+require('@jswork/next-serial-version-uid');
 
 module.exports = class extends Generator {
   prompting() {
